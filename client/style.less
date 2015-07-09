@@ -1,0 +1,301 @@
+/* -------------------- LESS -------------------- */
+
+/* colours */
+@basecolor: #232323;
+@white: #fff;
+
+/* widths */
+@threehundred: 300px;
+@sixhundred: 600px;
+@third: 33.33333333%;
+@half: 50%;
+@full: 100%;
+
+/* -------------------- CSS -------------------- */
+
+body {
+	font-family: 'Slabo 27px', serif;
+}
+
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+}
+
+/* Center a block */
+.text-center {
+	text-align: center;
+	display: block;
+}
+
+/* Artist block */
+.loadArtist {
+	cursor: pointer;
+	h1 {
+		display: block;
+		width: @full;
+		min-height: @threehundred;
+		line-height: @threehundred;
+		font-size: 18px;
+		text-transform: uppercase;
+		background-color: rgba(0, 0, 0, 0.5);
+		color: @white;
+		margin: 0;
+		padding: 0;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+.loading {
+	text-align: center;
+	margin-top: 100px;
+}
+
+/* Header with logotype and search field */
+.topbar {
+	background-color: @basecolor;
+	text-align: center;
+	.logo {
+		color: @white;
+		margin: 0;
+		padding: 20px 0px;
+	}
+	input {
+		vertical-align: middle;
+	}
+}
+
+.search {
+	text-align: center;
+	padding: 0px 0px 20px;
+	input {
+		font-size: 18px;
+		border-radius: 20px;
+		background-color: @basecolor;
+		color: @white;
+		border-style:solid;
+		border:1px solid @white;
+		padding: 5px;
+		font-weight: 400;
+		text-align: center;
+	}
+	input:focus {
+		outline: 0;
+	}
+}
+
+/* Log in block */
+.login {
+	cursor: pointer;
+	display: block;
+	margin: 30vh auto 0;
+}
+
+.login-buttons-dropdown-align- {
+	padding: 0px 0px 20px;
+}
+
+/* The playlist block */
+.myPlaylist {
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-right-radius: 10px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: @full;
+	max-height: 500px;
+	max-width: 500px;
+	padding: 20px;
+	background-color: @basecolor;
+	z-index: 999;
+	color: 0;
+	text-transform: uppercase;
+	color: @white;
+	font-weight: 700;
+	overflow-y: auto;
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	i {
+		color: #FF5E5E;
+	}
+}
+
+.myPlaylist.minimized {
+	.myPlaylist-inside {
+		display: none;
+	}
+}
+
+/* Row */
+.row {}
+
+/* Column */
+.col {
+	float: left;
+	overflow: hidden;
+	max-height: @sixhundred;
+	width: @third;
+}
+
+.col.left, .col.right {
+	min-height: @sixhundred;
+	width: @half;
+}
+
+/* Left */
+.left {}
+
+/* Right */
+.right {
+	background-color: #d4cbbf;
+	padding: 20px 40px;
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+	ul li {
+		list-style-type: none;
+		padding: 0px 0px 10px;
+	}
+}
+
+/* Album cover */
+.coverImage {
+	background-color: #d4cbbf;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	max-height: @sixhundred;
+	max-width: @sixhundred;
+}
+
+.img-responsive {
+	width: @full;
+}
+
+/* Buttons */
+.addTrack, .removeTrack, .toggle, .btn {
+	cursor: pointer;
+}
+
+.btn {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 5px 15px;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 10px;
+  color: @white;
+  position: relative;
+  display: inline-block;
+}
+
+.btn:hover {
+  text-decoration: none;
+  color: #eee;
+}
+
+.btn:active {
+  -webkit-transform: translate(0px, 5px);
+  -moz-transform: translate(0px, 5px);
+  transform: translate(0px, 5px);
+  -webkit-box-shadow: 0px 1px 0px 0px;
+  -moz-box-shadow: 0px 1px 0px 0px;
+  box-shadow: 0px 1px 0px 0px;
+}
+
+/* Blue button */
+.blue {
+  background-color: #55acee;
+  -webkit-box-shadow: 0px 5px 0px 0px #3C93D5;
+  -moz-box-shadow: 0px 5px 0px 0px #3C93D5;
+  box-shadow: 0px 5px 0px 0px #3C93D5;
+}
+
+.blue:hover {
+  background-color: #6FC6FF;
+}
+
+/* Green button */
+.green {
+  background-color: #2ecc71;
+  -webkit-box-shadow: 0px 5px 0px 0px #15B358;
+  -moz-box-shadow: 0px 5px 0px 0px #15B358;
+  box-shadow: 0px 5px 0px 0px #15B358;
+}
+
+.green:hover {
+  background-color: #48E68B;
+}
+
+/* Red button */
+.red {
+  background-color: #e74c3c;
+  -webkit-box-shadow: 0px 5px 0px 0px #CE3323;
+  -moz-box-shadow: 0px 5px 0px 0px #CE3323;
+  box-shadow: 0px 5px 0px 0px #CE3323;
+}
+
+.red:hover {
+  background-color: #FF6656;
+}
+
+/* Purple button */
+.purple {
+  background-color: #9b59b6;
+  -webkit-box-shadow: 0px 5px 0px 0px #82409D;
+  -moz-box-shadow: 0px 5px 0px 0px #82409D;
+  box-shadow: 0px 5px 0px 0px #82409D;
+}
+
+.purple:hover {
+  background-color: #B573D0;
+}
+
+/* Orange button */
+.orange {
+  background-color: #e67e22;
+  -webkit-box-shadow: 0px 5px 0px 0px #CD6509;
+  -moz-box-shadow: 0px 5px 0px 0px #CD6509;
+  box-shadow: 0px 5px 0px 0px #CD6509;
+}
+
+.orange:hover {
+  background-color: #FF983C;
+}
+
+/* Yellow button */
+.yellow {
+  background-color: #f1c40f;
+  -webkit-box-shadow: 0px 5px 0px 0px #D8AB00;
+  -moz-box-shadow: 0px 5px 0px 0px #D8AB00;
+  box-shadow: 0px 5px 0px 0px #D8AB00;
+}
+
+.yellow:hover {
+  background-color: #FFDE29;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+
+@media (max-width: 768px) {
+	.col.left, .col.right {
+		width: @full;
+	}
+	.col {
+		width: @half;
+	}
+}
+
+@media (max-width: 480px) {
+	.col.left, .col.right, .col {
+		width: @full;
+	}
+}

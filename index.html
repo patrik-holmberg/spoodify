@@ -1,0 +1,89 @@
+<head>
+	<title>Spoodify</title>
+	<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://css-spinners.com/css/spinner/spinner.css" type="text/css">
+</head>
+
+<body>
+	{{#unless currentUser}}
+		{{ > login }}
+	{{else}}
+		<div class="topbar">
+			<div class="container">
+				<h1 class="logo"><span class="fa fa-headphones"></span> Spoodify</h1>
+				{{> searchArtist }}
+			</div>
+		</div>
+		<div class="main container">
+			{{> searchResult }}
+			{{> myPlaylist }}
+			{{> listArtist }}
+		</div>
+	{{/unless}}
+</body>
+
+<template name="login">
+	<img src="/log_in-desktop-large.png" class="login">
+</template>
+
+<template name="searchArtist">
+	<div class="search">
+		<form class="search-artist">
+			<input type="text" name="searchTerm" placeholder="Snabbsök">
+		</form>
+	</div>
+</template>
+
+<template name="searchResult">
+	{{#if loading}}
+		<div class="loading">
+			<div class="spinner-loader">
+				Loading…
+			</div>
+		</div>
+	{{else}}
+		<div class="row">
+		{{#each result}}
+			<div class="col loadArtist">
+				<div class="coverImage" style="background-image:url({{images.[0].url}})">
+					<h1 class="text-center">{{name}}</h1>
+				</div>
+			</div>
+		{{/each}}
+		</div>
+	{{/if}}
+</template>
+
+<template name="listArtist">
+	{{#if data}}
+		<div class="row">
+			<div class="col left">
+				<img src="{{data.images.[0].url}}" class="img-responsive">
+			</div>
+			<div class="col right">
+				<h2>Topplåtar av {{data.name}}</h2>
+				<ul>
+					{{#each data.tracks}}
+						<li><a class="addTrack" title="Lägg till låt i din spellista"><i class="fa fa-plus-circle"></i></a> {{ name }}</li>
+					{{/each}}
+				</ul>
+			</div>
+		</div>
+	{{/if}}
+</template>
+
+<template name="myPlaylist">
+	{{#if tracks}}
+	<div class="myPlaylist {{minimized}}">
+		<i class="fa {{toggle}} toggle"></i> Min spellista
+		<div class="myPlaylist-inside">
+			<a class="btn green createPlaylist">Skapa</a>
+			<ul>
+				{{#each tracks}}
+					<li><a class="removeTrack" title="Radera låt från din spellista"><i class="fa fa-minus-circle"></i></a> {{artists.[0].name}} - {{name}}</li>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+	{{/if}}
+</template>
